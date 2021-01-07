@@ -6,6 +6,9 @@ import 'package:relativandatomic/recently.dart';
 import 'package:flutter/material.dart';
 import 'package:relativandatomic/screens/detail/detail_screen_1.dart';
 import 'package:relativandatomic/screens/detail/detail_screen_2.dart';
+import 'package:relativandatomic/screens/detail/detail_screen_3.dart';
+import 'package:relativandatomic/screens/detail/detail_screen_4.dart';
+import 'package:relativandatomic/screens/detail/widgets/Simulation/simulation_relativity.dart';
 
 class Resources extends StatelessWidget {
   final _controller = TextEditingController();
@@ -105,52 +108,78 @@ class Resources extends StatelessWidget {
                 ],
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailScreen_1(),
+            ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              padding: EdgeInsets.all(10.0),
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                Container(
+                  height: 210,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailScreen_1(),
+                            ),
+                          );
+                        },
+                        child: CourseCategory(
+                          imagePath: "assets/images/relativity.png",
+                          title: "Relativity",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailScreen_2(),
+                            ),
+                          );
+                        },
+                        child: CourseCategory(
+                          imagePath: "assets/images/atomicmodel.png",
+                          title: "Atomic Model",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailScreen_3(),
+                            ),
+                          );
+                        },
+                        child: CourseCategory(
+                          imagePath: "assets/images/simulation_ux.png",
+                          title: "Simulation",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailScreen_4(),
+                            ),
+                          );
+                        },
+                        child: CourseCategory(
+                          imagePath: "assets/images/team.png",
+                          title: "Team",
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              },
-              child: Container(
-                height: 210,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 1,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CourseCard(
-                        "Relativity", "20", "assets/images/relativity.png");
-                  },
                 ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailScreen_2(),
-                  ),
-                );
-              },
-              child: Container(
-                height: 195,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: namecourse.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CourseCard(
-                      "Atomic Models",
-                      "20",
-                      "assets/images/atomicmodel.png",
-                    );
-                  },
-                ),
-              ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),

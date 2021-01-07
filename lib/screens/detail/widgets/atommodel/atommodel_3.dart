@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class atommodel_3 extends StatelessWidget {
   final String imagePath;
@@ -70,7 +71,10 @@ class atommodel_3 extends StatelessWidget {
             child: SizedBox(
               height: 40,
               width: 40,
-              child: Image.asset("assets/images/play_active.png"),
+              child: InkWell(
+                  child: Image.asset("assets/images/play_active.png"),
+                  onTap: () =>
+                      launch('https://www.youtube.com/watch?v=VcGpU5LL9PA')),
             ),
           ),
         ],

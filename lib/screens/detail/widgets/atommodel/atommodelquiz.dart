@@ -71,24 +71,18 @@ class atommodelquiz extends StatelessWidget {
             child: SizedBox(
               height: 40,
               width: 40,
-              child: Image.asset("assets/images/play_active.png"),
+              child: InkWell(
+                  child: Image.asset("assets/images/play_active.png"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizScreen(),
+                      ),
+                    );
+                  }),
             ),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => QuizScreen(),
-                ),
-              );
-            },
-            child: Container(
-              height: 40,
-              width: 40,
-              child: Image.asset("assets/images/play_active.png"),
-            ),
-          )
         ],
       ),
     );

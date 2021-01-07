@@ -9,9 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Relativiy And Atomic Model',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.indigo,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: TextTheme(title: TextStyle(fontFamily: "Nunito"))),
       home: MyHomePage(),
     );

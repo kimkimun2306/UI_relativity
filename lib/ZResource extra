@@ -1,0 +1,47 @@
+ InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen_1(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 210,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 1,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CourseCard(
+                        "Relativity", "20", "assets/images/relativity.png");
+                  },
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen_2(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 210,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: namecourse.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CourseCard(
+                      "Atomic Models",
+                      "20",
+                      "assets/images/atomicmodel.png",
+                    );
+                  },
+                ),
+              ),
+            ),
