@@ -12,54 +12,61 @@ class QuizScreen2 extends StatefulWidget {
 class _QuizScreenState2 extends State<QuizScreen2> {
   final _questions = const [
     {
-      'questionText': 'Q1. Who created Flutter?',
+      'questionText':
+          'Anda berada di pesawat ruang angkasa yang bergerak dengan kecepatan 90% kali laju cahaya dan anda bersandar di dinding. Jika sudut anda dengan lantai adalah 60º dan tinggi anda 1.7 m, pada sudut berapa seorang pengamat di bumi melihat anda bersandar dan berapa tinggi anda menurut pengamat di bumi…',
       'answers': [
-        {'text': 'Facebook', 'score': -2},
-        {'text': 'Adobe', 'score': -2},
-        {'text': 'Google', 'score': 10},
-        {'text': 'Microsoft', 'score': -2},
-      ],
-    },
-    {
-      'questionText': 'Q2. What is Flutter?',
-      'answers': [
-        {'text': 'Android Development Kit', 'score': -2},
-        {'text': 'IOS Development Kit', 'score': -2},
-        {'text': 'Web Development Kit', 'score': -2},
-        {
-          'text':
-              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
-          'score': 10
-        },
-      ],
-    },
-    {
-      'questionText': ' Q3. Which programing language is used by Flutter',
-      'answers': [
-        {'text': 'Ruby', 'score': -2},
-        {'text': 'Dart', 'score': 10},
-        {'text': 'C++', 'score': -2},
-        {'text': 'Kotlin', 'score': -2},
-      ],
-    },
-    {
-      'questionText': 'Q4. Who created Dart programing language?',
-      'answers': [
-        {'text': 'Lars Bak and Kasper Lund', 'score': 10},
-        {'text': 'Brendan Eich', 'score': -2},
-        {'text': 'Bjarne Stroustrup', 'score': -2},
-        {'text': 'Jeremy Ashkenas', 'score': -2},
+        {'text': '75 derajat dan 1.53 m', 'score': -2},
+        {'text': '77 derajat dan 1.44 m', 'score': -2},
+        {'text': '76 derajat dan 1.52 m', 'score': 10},
+        {'text': '71 derajat dan 1.11 m', 'score': -2},
+        {'text': '76 derajat dan 1.23 m', 'score': -2},
       ],
     },
     {
       'questionText':
-          'Q5. Is Flutter for Web and Desktop available in stable version?',
+          'Berapa kelajuan pesawat ruang angkasa yang bergerak relatif terhadap bumi supaya 2 jam didalam pesawat sama dengan 1 jam di bumi…',
+      'answers': [
+        {'text': '0.38 c', 'score': -2},
+        {'text': '0.40 c', 'score': -2},
+        {'text': '0.22 c', 'score': -2},
+        {'text': '0.86 c', 'score': 10},
+        {'text': '0.68 c', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Carilah kecepatan dan momentum sebuah elektron dengan energi kinetik 10.0 Mev! (moc^2=0.511MeV)',
+      'answers': [
+        {'text': 'V=0,9988 c dan p= 10,5 MeV/c', 'score': 10},
+        {'text': 'V=0,9922 c dan p= 10,2 MeV/c', 'score': -2},
+        {'text': 'V=0,9783 c dan p= 10,1 MeV/c', 'score': -2},
+        {'text': 'V=0,2986 c dan p= 10,9 MeV/c', 'score': -2},
+        {'text': 'V=0,2287 c dan p= 10,5 MeV/c', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Massa diam sebuah partikel = m0. Massa partikel tersebut saat bergerak dengan kecepatan 0,8 c akan bertambah menjadi...',
+      'answers': [
+        {'text': '1,25 M0', 'score': -2},
+        {'text': '1,42 M0', 'score': -2},
+        {'text': '1,52 M0', 'score': -2},
+        {'text': '1,67 M0', 'score': 10},
+        {'text': '1,92 M0', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Benda bergerak dengan laju 0,6 c dengan arah sesuai panjang benda. Bagi pengamat yang diam terlihat panjang benda mengalami penyusutan sebesar...',
       'answers': [
         {
-          'text': 'Yes',
-          'score': -2,
+          'text': '20 %',
+          'score': 10,
         },
-        {'text': 'No', 'score': 10},
+        {'text': '30 %', 'score': -2},
+        {'text': '38 %', 'score': -2},
+        {'text': '64 %', 'score': -2},
+        {'text': '80 %', 'score': -2},
       ],
     },
   ];
@@ -82,21 +89,15 @@ class _QuizScreenState2 extends State<QuizScreen2> {
     });
     print(_questionIndex);
     if (_questionIndex < _questions.length) {
-      print('We have more questions!');
+      print('Kami masih Punya beberapa pertanyaan!');
     } else {
-      print('No more questions!');
+      print('Tidak ada Pertanyaan lagi!');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Relativiy And Atomic Model',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: "Avenir",
-      ),
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -113,10 +114,11 @@ class _QuizScreenState2 extends State<QuizScreen2> {
             },
           ),
           title: Text(
-            'Exercise Atom',
+            'Latihan Soal Relativitas',
             style: TextStyle(color: Colors.black),
           ),
         ),
+
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: _questionIndex < _questions.length
@@ -126,7 +128,8 @@ class _QuizScreenState2 extends State<QuizScreen2> {
                   questions: _questions,
                 ) //Quiz
               : Result(_totalScore, _resetQuiz),
-        ), //Padding
+        ),
+        //Padding
       ), //Scaffold
       debugShowCheckedModeBanner: false,
     ); //MaterialApp

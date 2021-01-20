@@ -1,14 +1,15 @@
 import 'package:relativandatomic/CourseCard/CourseCard_1.dart';
+import 'package:relativandatomic/TeamKotaKortak.dart';
 import 'package:relativandatomic/course_category.dart';
 import 'package:relativandatomic/coursemodel.dart';
 import 'package:relativandatomic/main.dart';
+import 'package:relativandatomic/recently%202.dart';
+import 'package:relativandatomic/recently%203.dart';
 import 'package:relativandatomic/recently.dart';
 import 'package:flutter/material.dart';
 import 'package:relativandatomic/screens/detail/detail_screen_1.dart';
 import 'package:relativandatomic/screens/detail/detail_screen_2.dart';
-import 'package:relativandatomic/screens/detail/detail_screen_3.dart';
-import 'package:relativandatomic/screens/detail/detail_screen_4.dart';
-import 'package:relativandatomic/screens/detail/widgets/Simulation/simulation_relativity.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Resources extends StatelessWidget {
   final _controller = TextEditingController();
@@ -16,23 +17,6 @@ class Resources extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      decoration: BoxDecoration(
-        // Box decoration takes a gradient
-        gradient: LinearGradient(
-          // Where the linear gradient begins and ends
-          begin: Alignment.topLeft,
-          end: Alignment.topRight,
-          // Add one stop for each color. Stops should increase from 0 to 1
-          stops: [0.4, 0.7, 0.5, 0.5],
-          colors: [
-            // Colors are easy thanks to Flutter's Colors class.
-            Color(0xfffafdff),
-            Color(0xfffafdff),
-            Color(0xffE7FFFF),
-            Color(0xffE7FFFF),
-          ],
-        ),
-      ),
       child: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
@@ -51,7 +35,7 @@ class Resources extends StatelessWidget {
                         image: DecorationImage(
                       fit: BoxFit.fitWidth,
                       image: AssetImage(
-                        "assets/images/1.jpg",
+                        "assets/images/psychadellic.png",
                       ),
                     )),
                     child: Padding(
@@ -64,7 +48,7 @@ class Resources extends StatelessWidget {
                             height: 90,
                           ),
                           Text(
-                            "All Subjects",
+                            "Relativitas dan Model Atom",
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 color: Colors.white,
@@ -76,7 +60,7 @@ class Resources extends StatelessWidget {
                             height: 12,
                           ),
                           Text(
-                            "Please select a study subject",
+                            "Pilih Subjek Pelajaran",
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 color: Color(0xffE1F5FF),
@@ -98,7 +82,7 @@ class Resources extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "All Subjects",
+                    "Semua Subjek",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -109,7 +93,6 @@ class Resources extends StatelessWidget {
               ),
             ),
             ListView(
-              scrollDirection: Axis.vertical,
               shrinkWrap: true,
               padding: EdgeInsets.all(10.0),
               physics: NeverScrollableScrollPhysics(),
@@ -131,7 +114,7 @@ class Resources extends StatelessWidget {
                         },
                         child: CourseCategory(
                           imagePath: "assets/images/relativity.png",
-                          title: "Relativity",
+                          title: "Relativitas",
                         ),
                       ),
                       InkWell(
@@ -145,35 +128,7 @@ class Resources extends StatelessWidget {
                         },
                         child: CourseCategory(
                           imagePath: "assets/images/atomicmodel.png",
-                          title: "Atomic Model",
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetailScreen_3(),
-                            ),
-                          );
-                        },
-                        child: CourseCategory(
-                          imagePath: "assets/images/simulation_ux.png",
-                          title: "Simulation",
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetailScreen_4(),
-                            ),
-                          );
-                        },
-                        child: CourseCategory(
-                          imagePath: "assets/images/team.png",
-                          title: "Team",
+                          title: "Model Atom",
                         ),
                       ),
                     ],
@@ -187,33 +142,150 @@ class Resources extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "Recently Viewed",
+                    "Simulasi",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
                         letterSpacing: 1.9,
                         fontWeight: FontWeight.w700),
                   ),
-                  Text(
-                    "See all",
-                    style: TextStyle(
-                        color: Colors.grey[500],
-                        fontSize: 14,
-                        letterSpacing: 1.9,
-                        fontWeight: FontWeight.bold),
-                  )
                 ],
               ),
             ),
-            ListView.builder(
+            ListView(
               scrollDirection: Axis.vertical,
-              itemCount: 3,
               shrinkWrap: true,
               padding: EdgeInsets.all(0.0),
               physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) {
-                return Recently();
-              },
+              children: <Widget>[
+                InkWell(
+                  onTap: () => launch(
+                      'https://www.wolframcloud.com/obj/0892198f-1d13-4f6e-814c-08b27a8c5757'),
+                  child: Recently(),
+                ),
+              ],
+            ),
+            ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              padding: EdgeInsets.all(0.0),
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                InkWell(
+                  onTap: () => launch(
+                      'https://www.wolframcloud.com/obj/c92a7184-afa9-4e5b-8745-95bd108b4591'),
+                  child: Recently2(),
+                ),
+              ],
+            ),
+            ListView(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              padding: EdgeInsets.all(0.0),
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                InkWell(
+                  onTap: () => launch(
+                      'https://www.wolframcloud.com/obj/cdbc880a-1e38-403e-9829-f88257e82fe9'),
+                  child: Recently3(),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Team",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        letterSpacing: 1.9,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+            ),
+            ListView(
+              shrinkWrap: true,
+              padding: EdgeInsets.all(5.0),
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                Container(
+                  height: 235,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    children: [
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/kimiskim23/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/kimbo.png",
+                          title: "Naufal Al-Hakim",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/wafaputriaulia/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/wafa.png",
+                          title: "Wafa Putri A.",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/_ansalsabila/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/icha.png",
+                          title: "Annisa Nurul S.",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () => launch(
+                            'https://www.instagram.com/yaraa_meliya.nzzz/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/meli.png",
+                          title: "Ananda Meliyana M.",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/restynraa/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/resty.png",
+                          title: "Resty Nurazizah",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/rofiq.awal/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/rofiq.png",
+                          title: "Rofiq Fadhillah A.",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/gaps117/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/gusti.png",
+                          title: "Gusti Andika P.",
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () =>
+                            launch('https://www.instagram.com/rindiewelt/'),
+                        child: Teamkotak(
+                          imagePath: "assets/images/furqon.png",
+                          title: "M. Furqon I. F.",
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),

@@ -12,54 +12,71 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   final _questions = const [
     {
-      'questionText': 'Q1. Who created Flutter?',
+      'questionText':
+          'Kelemahan teori atom Rutherford terkait dengan kedudukan elektron dalam atom. Jika partikel bermuatan listrik bergeser menurut garis lintasan melengkung, maka akan terjadi … sehingga elektron akan bersatu dengan inti atom.',
       'answers': [
-        {'text': 'Facebook', 'score': -2},
-        {'text': 'Adobe', 'score': -2},
-        {'text': 'Google', 'score': 10},
-        {'text': 'Microsoft', 'score': -2},
-      ],
-    },
-    {
-      'questionText': 'Q2. What is Flutter?',
-      'answers': [
-        {'text': 'Android Development Kit', 'score': -2},
-        {'text': 'IOS Development Kit', 'score': -2},
-        {'text': 'Web Development Kit', 'score': -2},
+        {'text': 'Gaya sentrifugal melawan gaya tarik elektron', 'score': -2},
         {
           'text':
-              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
+              'Gaya sentripetal melawan gaya sentrifugal elektron terhadap inti',
+          'score': -2
+        },
+        {
+          'text': 'Terjadi perubahan energi kinetik menjadi energi potensial',
+          'score': -2
+        },
+        {
+          'text': 'Terjadi perubahan energi kinetik menjadi energi radiasi',
           'score': 10
         },
-      ],
-    },
-    {
-      'questionText': ' Q3. Which programing language is used by Flutter',
-      'answers': [
-        {'text': 'Ruby', 'score': -2},
-        {'text': 'Dart', 'score': 10},
-        {'text': 'C++', 'score': -2},
-        {'text': 'Kotlin', 'score': -2},
-      ],
-    },
-    {
-      'questionText': 'Q4. Who created Dart programing language?',
-      'answers': [
-        {'text': 'Lars Bak and Kasper Lund', 'score': 10},
-        {'text': 'Brendan Eich', 'score': -2},
-        {'text': 'Bjarne Stroustrup', 'score': -2},
-        {'text': 'Jeremy Ashkenas', 'score': -2},
+        {
+          'text': 'Terjadi perubahan energi kinetik menjadi energi kimia',
+          'score': -2
+        },
       ],
     },
     {
       'questionText':
-          'Q5. Is Flutter for Web and Desktop available in stable version?',
+          'Tentukan energi E(infinite) , frekuensi f(infinite) , dan and panjang gelombang l(infinite) transisi tertinggi dari deret Brackett (nf = 4) untuk Be3+ (Z=4)…',
       'answers': [
-        {
-          'text': 'Yes',
-          'score': -2,
-        },
-        {'text': 'No', 'score': 10},
+        {'text': '3.29 x 10^15 /s', 'score': 10},
+        {'text': '3.41 x 10^15 /s', 'score': -2},
+        {'text': '3.25 x 10^12 /s', 'score': -2},
+        {'text': '3.72 x 10^12 /s', 'score': -2},
+        {'text': '3.15 x 10^15 /s', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Yang membuktikan model atom Thomson tidak tepat adalah percobaan …',
+      'answers': [
+        {'text': 'Sinar Katode', 'score': -2},
+        {'text': 'Hamburan sinar alfa pada lempengan emas tipis', 'score': 10},
+        {'text': 'Spektrum atom hidrogen', 'score': -2},
+        {'text': 'Tetes minyak milikan', 'score': -2},
+        {'text': 'Sinar Kanal', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Jika energi transisi deret Paschen atom helium adalah 2.644 eV, tentukan transisinya (nilai n awal dan akhir).....',
+      'answers': [
+        {'text': '2', 'score': -2},
+        {'text': '3', 'score': -2},
+        {'text': '4', 'score': 10},
+        {'text': '1', 'score': -2},
+        {'text': '5', 'score': -2},
+      ],
+    },
+    {
+      'questionText':
+          'Jika atom He (Z=2) pada keadaan dasar (n = 1) menyerap foton dengan l = 41.3 nm. Apakah elektron akan terionisasi? Tentukan energi dari foton yang diserap lalu bandingkan dengan energi ionisasi keadaan dasar Helium atau E0 dari n=1 ke infinite.',
+      'answers': [
+        {'text': '54,4 eV', 'score': 10},
+        {'text': '55,2 eV', 'score': -2},
+        {'text': '54,2 eV', 'score': -2},
+        {'text': '60,1 eV', 'score': -2},
+        {'text': '38,2 eV', 'score': -2},
       ],
     },
   ];
@@ -82,21 +99,15 @@ class _QuizScreenState extends State<QuizScreen> {
     });
     print(_questionIndex);
     if (_questionIndex < _questions.length) {
-      print('We have more questions!');
+      print('Kami masih Punya beberapa pertanyaan!');
     } else {
-      print('No more questions!');
+      print('Tidak ada Pertanyaan lagi!');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Relativiy And Atomic Model',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: "Avenir",
-      ),
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -113,7 +124,7 @@ class _QuizScreenState extends State<QuizScreen> {
             },
           ),
           title: Text(
-            'Exercise Atom',
+            'Latihan Soal Atom',
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -126,7 +137,8 @@ class _QuizScreenState extends State<QuizScreen> {
                   questions: _questions,
                 ) //Quiz
               : Result(_totalScore, _resetQuiz),
-        ), //Padding
+        ),
+        //Padding
       ), //Scaffold
       debugShowCheckedModeBanner: false,
     ); //MaterialApp

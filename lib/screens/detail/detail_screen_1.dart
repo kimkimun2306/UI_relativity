@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:relativandatomic/screens/detail/widgets/buy_now_modal.dart';
 import 'package:relativandatomic/screens/detail/widgets/relativitymaterial/relative_material_1.dart';
 import 'package:relativandatomic/screens/detail/widgets/relativitymaterial/relative_material_2.dart';
 import 'package:relativandatomic/screens/detail/widgets/relativitymaterial/relative_material_3.dart';
@@ -20,24 +19,16 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
     super.initState();
   }
 
-  void _showModal() {
-    showModalBottomSheet(
-      backgroundColor: Colors.transparent,
-      context: context,
-      builder: (_) {
-        return BuyNowModal();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4EF),
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF5F4EF),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -45,27 +36,9 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
             color: Color(0xFF61688B),
           ),
           onPressed: () {
-            debugPrint("back is pressed");
-
             Navigator.pop(context);
           },
         ),
-        elevation: 0,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                size: 24,
-                color: Color(0xFF61688B),
-              ),
-              onPressed: () {
-                _showModal();
-              },
-            ),
-          ),
-        ],
       ),
       body: Center(
         child: Container(
@@ -73,7 +46,7 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
           child: Stack(
             children: [
               Container(
-                height: size.height * 0.50,
+                height: size.height * 0.65,
                 width: size.width,
                 child: Image.asset(
                   "assets/images/relativity.png",
@@ -81,39 +54,15 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
                 ),
               ),
               Positioned(
-                top: 24,
+                top: 60,
                 left: 24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Stack(
-                      children: <Widget>[
-                        SizedBox(
-                          width: 100,
-                          child: Image.asset(
-                            "assets/images/best_seller_ribbon.png",
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 8,
-                            top: 8,
-                          ),
-                          child: Text(
-                            "BESTSELLER",
-                            style: TextStyle(
-                              color: Color(0xFF0D1333),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12),
                       child: Text(
-                        "Relativity",
+                        "Relativitas",
                         style: TextStyle(
                           color: Color(0xFF0D1333),
                           fontSize: 28,
@@ -127,7 +76,7 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "\FREE",
+                            "\Gratis",
                             style: TextStyle(
                               color: Color(0xFF0D1333),
                               fontSize: 28,
@@ -139,7 +88,7 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
                             child: Text(
                               "\$70",
                               style: TextStyle(
-                                  color: Color(0xFFA0A5BD),
+                                  color: Colors.black,
                                   fontSize: 16,
                                   decoration: TextDecoration.lineThrough),
                             ),
@@ -153,7 +102,7 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: 365,
+                  height: 325,
                   width: size.width,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -171,7 +120,7 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
                           left: 24,
                         ),
                         child: Text(
-                          "Categories",
+                          "Kategori",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -183,11 +132,9 @@ class _DetailScreenState_1 extends State<DetailScreen_1> {
                         child: ListView(
                           children: <Widget>[
                             relativematerial_1(),
+                            relativequiz(),
                             relativematerial_2(),
                             relativematerial_3(),
-                            relativematerial_4(),
-                            relativematerial_5(),
-                            relativequiz(),
                           ],
                         ),
                       ),

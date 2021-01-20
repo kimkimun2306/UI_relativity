@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Relativiy And Atomic Model',
+      title: 'Relativitas dan Model Atom',
       theme: ThemeData(
           primarySwatch: Colors.indigo,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
           padding: const EdgeInsets.only(right: 16.0, bottom: 32),
           child: Container(
             child: Text(
-              "Get Startted",
+              "Memulai",
               style: TextStyle(
                   color: Color(0xffE1F5FF),
                   fontSize: 18,
@@ -48,7 +48,8 @@ class MyHomePage extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/splash.jpg"), fit: BoxFit.fill),
+              image: AssetImage("assets/images/psychadellic.png"),
+              fit: BoxFit.fill),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -57,7 +58,7 @@ class MyHomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                "World's Best",
+                "Terbaik di Dunia",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Color(0xffE1F5FF),
@@ -69,7 +70,7 @@ class MyHomePage extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                "Education  Resources",
+                "Relativitas dan Model Atom",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Colors.white,
@@ -81,7 +82,7 @@ class MyHomePage extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                "Anytime, Anywhere, Easy to Learn",
+                "Dimanapun, Kapanpun, Mudah di Pelajari",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Color(0xffE1F5FF),

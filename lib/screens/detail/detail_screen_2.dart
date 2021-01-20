@@ -5,7 +5,6 @@ import 'package:relativandatomic/screens/detail/widgets/atommodel/atommodel_2.da
 import 'package:relativandatomic/screens/detail/widgets/atommodel/atommodel_3.dart';
 import 'package:relativandatomic/screens/detail/widgets/atommodel/atommodel_4.dart';
 import 'package:relativandatomic/screens/detail/widgets/atommodel/atommodelquiz.dart';
-import 'package:relativandatomic/screens/detail/widgets/buy_now_modal.dart';
 
 class DetailScreen_2 extends StatefulWidget {
   @override
@@ -20,24 +19,16 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
     super.initState();
   }
 
-  void _showModal() {
-    showModalBottomSheet(
-      backgroundColor: Colors.transparent,
-      context: context,
-      builder: (_) {
-        return BuyNowModal();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF5F4EF),
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF5F4EF),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -45,27 +36,9 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
             color: Color(0xFF61688B),
           ),
           onPressed: () {
-            debugPrint("back is pressed");
-
             Navigator.pop(context);
           },
         ),
-        elevation: 0,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                size: 24,
-                color: Color(0xFF61688B),
-              ),
-              onPressed: () {
-                _showModal();
-              },
-            ),
-          ),
-        ],
       ),
       body: Center(
         child: Container(
@@ -81,41 +54,17 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
                 ),
               ),
               Positioned(
-                top: 24,
+                top: 50,
                 left: 24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Stack(
-                      children: <Widget>[
-                        SizedBox(
-                          width: 100,
-                          child: Image.asset(
-                            "assets/images/best_seller_ribbon.png",
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 8,
-                            top: 8,
-                          ),
-                          child: Text(
-                            "BESTSELLER",
-                            style: TextStyle(
-                              color: Color(0xFF0D1333),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12),
                       child: Text(
-                        "Atomic Models",
+                        "Model Atom",
                         style: TextStyle(
-                          color: Color(0xFFFFFFFF),
+                          color: Colors.black,
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
                         ),
@@ -127,9 +76,9 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "\FREE",
+                            "\Gratis",
                             style: TextStyle(
-                              color: Color(0xFFFFFFFF),
+                              color: Colors.black,
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
@@ -139,7 +88,7 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
                             child: Text(
                               "\$70",
                               style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
+                                  color: Colors.black,
                                   fontSize: 16,
                                   decoration: TextDecoration.lineThrough),
                             ),
@@ -171,7 +120,7 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
                           left: 24,
                         ),
                         child: Text(
-                          "Categories",
+                          "Kategori",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -184,9 +133,9 @@ class _DetailScreenState_2 extends State<DetailScreen_2> {
                           children: <Widget>[
                             atommodel_1(),
                             atommodel_2(),
+                            atommodelquiz(),
                             atommodel_3(),
                             atommodel_4(),
-                            atommodelquiz(),
                           ],
                         ),
                       ),

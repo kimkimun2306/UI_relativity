@@ -28,7 +28,7 @@ class relativequiz extends StatelessWidget {
               left: 24,
             ),
             child: Text(
-              "01",
+              "02",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -46,7 +46,7 @@ class relativequiz extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 0),
                     child: Text(
-                      "Relativity Quiz",
+                      "Latihan Soal Relativitas",
                       style: TextStyle(
                         fontSize: 18,
                         color: Color(0xFF0D1333),

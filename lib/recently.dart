@@ -6,9 +6,7 @@ import 'progress_indicator.dart';
 
 class Recently extends StatelessWidget {
   final List title = [
-    "Unit 5 - Project Managing",
-    "Unit 8 - Figma Design",
-    "Unit 3 - Flutter tutorials",
+    "Dilatasi Waktu Relatif",
   ];
 
   final List colors = [Colors.blue, Colors.black, Colors.green];
@@ -21,7 +19,7 @@ class Recently extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  "assets/images/1.jpg",
+                  "assets/images/relativity.png",
                 ),
                 fit: BoxFit.cover),
             borderRadius: BorderRadius.circular(10),
@@ -40,7 +38,7 @@ class Recently extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            title[rng.nextInt(3)],
+            title[rng.nextInt(1)],
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w700,
@@ -55,14 +53,14 @@ class Recently extends StatelessWidget {
           ),
           FAProgressBar(
             size: 4,
-            currentValue: 30,
+            currentValue: 100,
             progressColor: Colors.green,
             backgroundColor: Color(0xffF0F0F0),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text(
-              "30% Completed",
+              "",
               style: TextStyle(
                 color: Colors.grey[500],
                 fontWeight: FontWeight.bold,

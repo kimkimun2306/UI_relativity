@@ -27,7 +27,7 @@ class atommodelquiz extends StatelessWidget {
               left: 24,
             ),
             child: Text(
-              "01",
+              "03",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -42,17 +42,10 @@ class atommodelquiz extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    "",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFFA0A5BD),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
-                      "Atomic Model Quiz",
+                      "Latihan Soal Model Atom",
                       style: TextStyle(
                         fontSize: 18,
                         color: Color(0xFF0D1333),

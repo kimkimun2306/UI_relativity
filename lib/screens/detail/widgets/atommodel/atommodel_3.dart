@@ -27,7 +27,7 @@ class atommodel_3 extends StatelessWidget {
               left: 24,
             ),
             child: Text(
-              "01",
+              "04",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class atommodel_3 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "5 minutes",
+                    "2 Menit",
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(0xFFA0A5BD),
@@ -52,7 +52,7 @@ class atommodel_3 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
-                      "Welcome to the Course",
+                      "Contoh Latihan Soal Atom",
                       style: TextStyle(
                         fontSize: 18,
                         color: Color(0xFF0D1333),
@@ -73,8 +73,7 @@ class atommodel_3 extends StatelessWidget {
               width: 40,
               child: InkWell(
                   child: Image.asset("assets/images/play_active.png"),
-                  onTap: () =>
-                      launch('https://www.youtube.com/watch?v=VcGpU5LL9PA')),
+                  onTap: () => launch('https://youtu.be/AxnYZCKGFtI')),
             ),
           ),
         ],
